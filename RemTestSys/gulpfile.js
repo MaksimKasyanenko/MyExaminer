@@ -28,10 +28,11 @@ gulp.task(
 );
 
 gulp.task(
-    "debug", function (done) {
+    "debug_build", function (done) {
         gulp.src(paths.scripts)
             .pipe(concat("testing.js"))
             .pipe(gulp.dest("wwwroot/scripts"));
         done();
     }
 );
+gulp.task("debug", gulp.series(["debug_build", "clean_source"]));

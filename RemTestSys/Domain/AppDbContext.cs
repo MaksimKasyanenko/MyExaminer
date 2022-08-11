@@ -5,7 +5,11 @@ namespace RemTestSys.Domain
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options){}
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+            //Database.EnsureDeleted();
+            //Database.EnsureCreated();
+        }
 
         public DbSet<Student> Students { get; set; }
         public DbSet<AccessToTestForStudent> AccessesToTestForStudent { get; set; }
