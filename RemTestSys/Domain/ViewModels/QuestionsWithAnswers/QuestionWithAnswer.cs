@@ -1,3 +1,4 @@
-namespace RemTestSys.Domain.ViewModels.QuestionsWithAnswers;
-
-public class QuestionWithAnswerViewModel:QuestionViewModel{}
+namespace RemTestSys.Domain.ViewModels.QuestionsWithAnswers
+{
+    public class QuestionWithAnswerViewModel : QuestionViewModel { }
+}

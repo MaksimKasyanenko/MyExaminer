@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using RemTestSys.Domain.ViewModels;
 using RemTestSys.Domain.ViewModels.QuestionsWithAnswers;
 
-namespace RemTestSys.Domain.Interfaces;
-
-public interface IQuestionService
+namespace RemTestSys.Domain.Interfaces
 {
-    Task<IEnumerable<QuestionViewModel>> GetQuestionsFromExamAsync(int examId);
-    Task<QuestionWithAnswerViewModel> FindQuestionWithAnswerAsync(int id);
-    Task AddQuestionWithAnswerAsync(QuestionWithAnswerViewModel questionViewModel);
-    Task UpdateQuestionWithAnswerAsync(QuestionWithAnswerViewModel questionViewModel);
-    Task DeleteAsync(int id);
+    public interface IQuestionService
+    {
+        Task<IEnumerable<QuestionViewModel>> GetQuestionsFromExamAsync(int examId);
+        Task<QuestionWithAnswerViewModel> FindQuestionWithAnswerAsync(int id);
+        Task AddQuestionWithAnswerAsync(QuestionWithAnswerViewModel questionViewModel);
+        Task UpdateQuestionWithAnswerAsync(QuestionWithAnswerViewModel questionViewModel);
+        Task DeleteAsync(int id);
+    }
 }

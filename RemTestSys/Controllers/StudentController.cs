@@ -42,7 +42,7 @@ namespace RemTestSys.Controllers
             ExamSessionViewModel session;
             try{
                 session = await examService.ExamineAsync(student.Id, id);
-            }catch(AccessToExamException ex){
+            }catch(AccessToExamException){
                 return View("Error");
             }
             return View(session);
