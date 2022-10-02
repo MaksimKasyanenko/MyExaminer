@@ -68,7 +68,7 @@ namespace RemTestSys.Domain.Services
         }
         public async Task UpdateExamAsync(ExamViewModel examViewModel)
         {
-            var exam = await dbContext.Tests.FirstOrDefaultAsync(e => e.Id == examViewModel.Id);
+            var exam = await dbContext.Tests.Include(t => t.MapParts).FirstOrDefaultAsync(e => e.Id == examViewModel.Id);
             if(exam == null)throw new DbUpdateException("Attempt of updating unexisting exam");
             exam.Name = examViewModel.Name;
             exam.Description = examViewModel.Description;
