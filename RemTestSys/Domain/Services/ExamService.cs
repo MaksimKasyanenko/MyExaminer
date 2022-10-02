@@ -73,6 +73,8 @@ namespace RemTestSys.Domain.Services
             exam.Name = examViewModel.Name;
             exam.Description = examViewModel.Description;
             exam.Duration = examViewModel.Duration;
+            dbContext.MapParts.RemoveRange(exam.MapParts);
+            await dbContext.SaveChangesAsync();
             exam.MapParts = examViewModel.MapParts.Select(mp => new Test.MapPart{
                 QuestionCount = mp.QuestionCount,
                 QuestionCast = mp.QuestionCost
