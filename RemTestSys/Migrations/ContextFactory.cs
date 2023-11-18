@@ -12,7 +12,7 @@ namespace RemTestSys.Migrations
     {
         public AppDbContext CreateDbContext(string[] args)
         {
-            string connectionString = @"Server=(localdb)\himsqlins;Initial Catalog=himtestdb;Integrated Security=true;";
+            string connectionString = @"Data Source=DESKTOP-MAUUNUF\SQLEXPRESS;Initial Catalog=MyExaminer;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
             optionsBuilder.UseSqlServer(connectionString, opts => opts.CommandTimeout((int)TimeSpan.FromMinutes(10).TotalSeconds));
             return new AppDbContext(optionsBuilder.Options);
