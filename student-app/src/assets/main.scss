@@ -6,6 +6,9 @@
 
 // 2. Include any default variable overrides here
 $primary: #2b6ba4;
+$secondary: #838380;
+$warning: #f7b83d;
+$danger: #f22928;
 $btn-border-radius: 2px;
 $input-border-radius: 2px;
 
@@ -45,4 +48,9 @@ body {
     background-size: cover;
     background-position: 50%;
     background-attachment: fixed;
+}
+
+.cover {
+  background-color: #242424cb;
+  backdrop-filter: blur(4px);
 }
